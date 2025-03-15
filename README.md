@@ -18,9 +18,8 @@ Expected output:
 NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
 nvme0n1     259:0    0 953.9G  0 disk 
 ├─nvme0n1p1 259:1    0   512M  0 part /boot/firmware
-├─nvme0n1p2 259:2    0 153.4G  0 part /
-├─nvme0n1p3 259:3    0   400G  0 part 
-└─nvme0n1p4 259:4    0   400G  0 part 
+├─nvme0n1p2 259:2    0 553.4G  0 part /
+└─nvme0n1p3 259:3    0   400G  0 part 
 ```
 
 ---
@@ -31,7 +30,6 @@ Manually mount the partitions:
 
 ```bash
 sudo mount /dev/nvme0n1p3 /storage/RetroPi
-sudo mount /dev/nvme0n1p4 /storage/LibreELEC
 ```
 
 Verify the mount:
@@ -43,8 +41,7 @@ lsblk
 Expected output:
 
 ```
-├─nvme0n1p3 259:3    0   400G  0 part /storage/RetroPi
-└─nvme0n1p4 259:4    0   400G  0 part /storage/LibreELEC
+└─nvme0n1p3 259:3    0   400G  0 part /storage/RetroPi
 ```
 
 ---
@@ -61,7 +58,6 @@ Add these lines at the bottom:
 
 ```bash
 /dev/nvme0n1p3  /storage/RetroPi  ext4  defaults  0 2
-/dev/nvme0n1p4  /storage/LibreELEC  ext4  defaults  0 2
 ```
 
 Save and exit (`CTRL + X`, then `Y`, then `ENTER`).
@@ -101,9 +97,6 @@ cd RetroPie-Setup
 chmod +x retropie_setup.sh
 sudo ./retropie_setup.sh
 ```
-
-Proceed to **Configuration / Update** and apply `retroarch bashwelcometweak`.
-
 ---
 
 ## 📂 **5. Relocate RetroPie to the Dedicated Partition**
