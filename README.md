@@ -137,3 +137,8 @@ emulationstation
 
 Enjoy your **RetroPie gaming experience** on an optimized setup! 🎮🔥
 
+
+🎮 Quality of Life Improvements
+
+Add ROMs via SFTP: Connect to your Raspberry Pi via an SFTP client (e.g., FileZilla or WinSCP) using your Pi’s IP address and drop ROMs into /storage/RetroPi/RetroPie/roms.
+
